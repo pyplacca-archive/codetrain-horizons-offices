@@ -1,0 +1,321 @@
+:root {
+  --head-font-weight: 500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: 'Bahnschrift', sans-serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+nav {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 5vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav > * {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+nav > a:first-child {
+  height: 50%;
+}
+
+nav > a:first-child img {
+  height: 100%;
+}
+
+nav > a:last-child {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: right;
+}
+
+nav .flags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav .flags a {
+  margin: .8vw;
+}
+
+nav .flags a img {
+  min-width: 1.7em;
+}
+
+main {
+  min-height: 69.8vh;
+}
+
+main, main sub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .carousel {
+  max-height: 85vh;
+  min-height: 30vh;
+  position: relative;
+  overflow-y: hidden;
+}
+
+main .carousel #left-arrow, main .carousel #right-arrow {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 8vw;
+  background-color: #00000003;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+main .carousel #left-arrow svg, main .carousel #right-arrow svg {
+  max-height: 50px;
+  -webkit-transform: scale(0.7, 0.7);
+          transform: scale(0.7, 0.7);
+}
+
+main .carousel #left-arrow svg .cls-1, main .carousel #right-arrow svg .cls-1 {
+  fill: none;
+  stroke: #b1b1b1;
+  stroke-width: 6px;
+}
+
+main .carousel #left-arrow:hover, main .carousel #right-arrow:hover {
+  background-color: #2222220c;
+}
+
+main .carousel #left-arrow:hover svg .cls-1, main .carousel #right-arrow:hover svg .cls-1 {
+  stroke: #fff;
+}
+
+main .carousel #left-arrow {
+  left: 0;
+}
+
+main .carousel #left-arrow:hover {
+  -webkit-box-shadow: 0px 0px 6px #00000015;
+          box-shadow: 0px 0px 6px #00000015;
+}
+
+main .carousel #right-arrow {
+  right: 0;
+}
+
+main .carousel #right-arrow:hover {
+  -webkit-box-shadow: -1px 0px 6px #00000015;
+          box-shadow: -1px 0px 6px #00000015;
+}
+
+main .carousel .indicators {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: 35px;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main .carousel .indicators button {
+  min-width: 9px;
+  min-height: 9px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  margin: 0 9px;
+  cursor: pointer;
+}
+
+main .carousel .indicators .active {
+  background-color: #fff;
+}
+
+main .carousel .images {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+main .carousel .images img {
+  width: 100%;
+}
+
+main .carousel .images :not(.active) {
+  -webkit-animation: fadeOut .3s ease-out forwards;
+          animation: fadeOut .3s ease-out forwards;
+  display: none;
+}
+
+main .carousel .images .active {
+  display: unset;
+  -webkit-animation: fadeIn .5s ease-in forwards;
+          animation: fadeIn .5s ease-in forwards;
+}
+
+main sub {
+  margin: 3vh 5vw 10vh 5vw;
+}
+
+main sub * {
+  text-align: center;
+}
+
+main sub > h2 {
+  text-transform: uppercase;
+  margin: 3vh;
+  font-size: 2em;
+}
+
+main sub .thumbnails {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -webkit-column-gap: 2vw;
+          column-gap: 2vw;
+  row-gap: 5vw;
+}
+
+main sub .thumbnails .thumb {
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+main sub .thumbnails .thumb img {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+}
+
+main sub .thumbnails .thumb section {
+  padding: 0 1vw;
+}
+
+main sub .thumbnails .thumb section h3 {
+  text-transform: uppercase;
+  margin: 12px 0;
+  font-size: 1.5em;
+}
+
+main sub .thumbnails .thumb section p {
+  margin: 15px 0;
+  font-size: 1.3em;
+}
+
+footer {
+  min-height: 15vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  row-gap: 7vh;
+  -webkit-column-gap: 2vw;
+          column-gap: 2vw;
+  text-align: center;
+  background-color: #101D61;
+  color: #fff;
+  padding: 2vh 0 1vh 0;
+}
+
+footer .option h3, footer .option h4 {
+  text-transform: uppercase;
+  font-weight: var(--head-font-weight);
+}
+
+footer .option h3 {
+  color: #ffde23;
+}
+
+footer .option h4, footer .option p {
+  margin: 1vh 0;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: .5;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: .5;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
